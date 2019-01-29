@@ -58,6 +58,10 @@ getAnchors.forEach(aTag =>{
     e.target.style.color = 'coral';
     // console.log(`You've hovered over ${e.target}`)
   })
+  //all links go to google.com but I prevent the default behavior
+  aTag.addEventListener('click', e =>{
+      e.preventDefault();
+  })
 })
 // Mouse Out
 getAnchors.forEach(aTag =>{
