@@ -4,13 +4,27 @@ let logoHeading = document.querySelector('.logo-heading')
 let getAnchors = document.querySelectorAll('nav a')
 let getH2 = document.querySelectorAll('h2')
 let randomColor = Math.floor(Math.random()*16777215).toString(16);
-
+let imageOpacity = document.querySelectorAll('img')
+let navHeader = document.querySelector('.main-navigation')
 //console.log when page contents are loaded. Very useful on bigger sites
-window.addEventListener("load", function(e) {
+window.addEventListener("load", e => {
     console.log("Page Loaded!");
   });
 
-  //dbl click fun bus in nav
+  //on resize opacity of images change
+  window.addEventListener('resize', () =>{
+      imageOpacity.forEach(image =>{
+          image.style.opacity = '0.5'
+        })
+        navHeader.style.zIndex = '1'
+  });
+
+  //alerts whenever something is copied from page.
+  document.addEventListener('copy', () =>{
+    alert(`You've copied something`)
+});
+  
+//dbl click fun bus in nav
   logoHeading.addEventListener('dblclick', () =>{
       bodyTag.style.color = 'teal';
     //   console.log('Color Changed')
@@ -38,9 +52,6 @@ window.addEventListener('scroll', () =>{
     })
 })
 
-
-
-
-console.log(randomColor)
+console.log(imageOpacity)
 
 
